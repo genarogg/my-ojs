@@ -1,0 +1,12 @@
+<?php $exp = 1764770109; $val = array (
+  'domain' => NULL,
+  'plural-forms' => NULL,
+  'messages' => 
+  array (
+    '' => 
+    array (
+      'plugins.OAIMetadata.marc.displayName' => 'Formato MARC de Metadatos',
+      'plugins.OAIMetadata.marc.description' => 'Estructura los metadatos de forma que son consistentes con el formato MARC.',
+    ),
+  ),
+);

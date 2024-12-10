@@ -1,0 +1,13 @@
+<?php $exp = 1764770109; $val = array (
+  'domain' => NULL,
+  'plural-forms' => NULL,
+  'messages' => 
+  array (
+    '' => 
+    array (
+      'plugins.block.makeSubmission.displayName' => 'Bloque para "Enviar un artículo"',
+      'plugins.block.makeSubmission.description' => 'Este módulo provee un bloque en la barra lateral con un enlace para "Enviar un artículo".',
+      'plugins.block.makeSubmission.linkLabel' => 'Enviar un artículo',
+    ),
+  ),
+);

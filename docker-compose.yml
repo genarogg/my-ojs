@@ -1,0 +1,41 @@
+services:
+  ojs:
+    build: .
+    ports:
+      - "3000:80"
+    volumes:
+      - .:/var/www/html
+      - ./ojs-files:/var/www/html/files
+      - ./ojs-files:/var/www/files  
+    depends_on:
+      - mariadb
+
+  mariadb:
+    image: mariadb:latest
+    container_name: mariadb_container
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: dir_informatica
+      MYSQL_DATABASE: ojs
+      MYSQL_USER: dir_informatica
+      MYSQL_PASSWORD: dir_informatica
+    ports:
+      - "3306:3306"
+    volumes:
+      - mariadb_data:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin_container
+    restart: always
+    environment:
+      PMA_HOST: mariadb_container
+      PMA_USER: dir_informatica
+      PMA_PASSWORD: dir_informatica
+      UPLOAD_LIMIT: 64M
+    ports:
+      - "5000:80"
+
+volumes:
+  mariadb_data:

@@ -1,0 +1,3 @@
+CREATE DATABASE IF NOT EXISTS ojs;
+GRANT ALL PRIVILEGES ON ojs.* TO 'dir_informatica'@'%' IDENTIFIED BY 'dir_informatica';
+FLUSH PRIVILEGES;

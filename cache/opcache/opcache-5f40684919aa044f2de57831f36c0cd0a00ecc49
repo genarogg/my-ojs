@@ -1,0 +1,22 @@
+<?php $exp = 1764770109; $val = array (
+  'domain' => NULL,
+  'plural-forms' => 'nplurals=2; plural=n != 1;',
+  'messages' => 
+  array (
+    '' => 
+    array (
+      'plugins.reports.counter.description' => 'El módulo COUNTER permite generar informes sobre la actividad de la revista mediante el <a href="http://www.projectcounter.org">estándar COUNTER</a>. Estos informes por sí solos no hacen que la revista sea conforme a COUNTER. Para ofrecer conformidad con COUNTER, revise los requisitos en el sitio web de Project COUNTER.',
+      'plugins.reports.counter' => 'Informe COUNTER',
+      'plugins.reports.counter.release' => 'Versión COUNTER',
+      'plugins.reports.counter.error.badParameters' => 'Los parámetros del informe no eran válidos.',
+      'plugins.reports.counter.error.badRequest' => 'La petición de informe no es válida.',
+      'plugins.reports.counter.error.noResults' => 'No se han encontrado resultados para este informe.',
+      'plugins.reports.counter.error.noXML' => 'Los resultados no se han podido formatear como XML.',
+      'plugins.reports.counter.1a.name' => 'Informe COUNTER JR1 (R3)',
+      'plugins.reports.counter.1a.description' => 'Informe de revista COUNTER 1 (R3): solicitudes de artículos completos por mes y revista',
+      'plugins.reports.counter.allCustomers' => 'Todos los clientes/as',
+      'plugins.reports.counter.ar1.title' => 'Informe de artículo 1',
+      'plugins.reports.counter.jr1.title' => 'Informe de revista 1',
+    ),
+  ),
+);
