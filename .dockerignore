@@ -1,0 +1,50 @@
+# Ignorar archivos y directorios innecesarios para la imagen Docker
+
+# Archivos de configuración específicos del entorno
+.env
+.env.local
+.env.*.local
+
+# Directorios de dependencias
+node_modules
+vendor
+
+# Archivos de compilación y caché
+*.log
+*.lock
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*.DS_Store
+*.idea
+*.vscode
+
+# Directorios de caché
+cache/
+tmp/
+logs/
+
+# Archivos de configuración específicos del IDE
+.idea/
+.vscode/
+
+# Archivos de configuración específicos del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Archivos de configuración específicos de Docker
+docker-compose.override.yml
+docker-compose.debug.yml
+
+# Archivos de configuración específicos de CI/CD
+.travis.yml
+.circleci/
+.github/
+.gitlab-ci.yml
+
+# Otros archivos y directorios innecesarios
+tests/
+docs/
+examples/

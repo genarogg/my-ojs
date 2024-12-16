@@ -8,7 +8,13 @@ services:
       - ./ojs-files:/var/www/html/files
       - ./ojs-files:/var/www/files  
     depends_on:
-      - mariadb
+      mariadb:
+        condition: service_healthy
+    environment:
+      DB_HOST: mariadb_container
+      DB_USER: dir_informatica
+      DB_PASSWORD: dir_informatica
+      DB_NAME: saber_unerg
 
   mariadb:
     image: mariadb:latest
@@ -16,7 +22,7 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: dir_informatica
-      MYSQL_DATABASE: ojs
+      MYSQL_DATABASE: saber_unerg
       MYSQL_USER: dir_informatica
       MYSQL_PASSWORD: dir_informatica
     ports:

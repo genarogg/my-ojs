@@ -20,8 +20,13 @@ RUN a2enmod rewrite
 # Copia los archivos del proyecto al contenedor
 COPY . /var/www/html
 
-# Establece los permisos adecuados
-RUN chown -R www-data:www-data /var \
+# Crea los directorios necesarios y establece los permisos adecuados
+RUN mkdir -p /var/www/html/files \
+    && mkdir -p /var/www/files \
+    && mkdir -p /var/www/html/cache/t_cache \
+    && mkdir -p /var/www/html/cache/t_compile \
+    && mkdir -p /var/www/html/cache/_db \
+    && chown -R www-data:www-data /var \
     && chmod -R 777 /var \
     && chmod -R 777 /var/www/html/config.inc.php \
     && chmod -R 777 /var/www/html/public \

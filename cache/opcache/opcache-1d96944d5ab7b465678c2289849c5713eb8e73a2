@@ -1,4 +1,4 @@
-<?php $exp = 1733889352; $val = array (
+<?php $exp = 1734403404; $val = array (
   'PKP\\observers\\events\\DecisionAdded' => 
   array (
     0 => 'PKP\\observers\\listeners\\AssignDOIs@handle',

@@ -148,8 +148,9 @@ sandbox = Off
 driver = mysqli
 host = mariadb_container
 username = dir_informatica
-password = dir_info
-name = ojs
+password = dir_informatica
+name = saber_unerg
+port = 3306
 
 ; Set the non-standard port and/or socket, if used
 port = 3306
