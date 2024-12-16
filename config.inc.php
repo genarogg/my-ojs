@@ -26,10 +26,10 @@
 
 ; Set this to On once the system has been installed
 ; (This is generally done automatically by the installer)
-installed = On
+installed = Off
 
 ; The canonical URL to the OJS installation (excluding the trailing slash)
-base_url = "http://localhost:3000"
+base_url = "https://pkp.sfu.ca/ojs"
 
 ; Enable strict mode. This will more aggressively cause errors/warnings when
 ; deprecated behaviour exists in the codebase.
@@ -66,7 +66,7 @@ scheduled_tasks_report_error_only = On
 ; time zones.
 ; I.e.: "Europe/Amsterdam"
 ; time_zone="Europe/Amsterdam"
-time_zone = UTC
+time_zone = "UTC"
 
 ; Short and long date formats
 date_format_short = "Y-m-d"
@@ -103,7 +103,7 @@ restful_urls = Off
 ; An empty string indicates that all hosts should be trusted (not recommended!)
 ; Example:
 ; allowed_hosts = '["myjournal.tld", "anotherjournal.tld", "mylibrary.tld"]'
-allowed_hosts = "[\"localhost\"]"
+allowed_hosts = ''
 
 ; Allow the X_FORWARDED_FOR header to override the REMOTE_ADDR as the source IP
 ; Set this to "On" if you are behind a reverse proxy and you control the
@@ -120,7 +120,7 @@ enable_minified = On
 
 ; Provide a unique site ID and OAI base URL to PKP for statistics and security
 ; alert purposes only.
-enable_beacon = Off
+enable_beacon = On
 
 ; Set this to "On" if you would like to only have a single, site-wide Privacy
 ; Statement, rather than a separate Privacy Statement for each journal. Setting
@@ -146,21 +146,20 @@ sandbox = Off
 [database]
 
 driver = mysqli
-host = mariadb_container
-username = dir_informatica
-password = dir_informatica
-name = saber_unerg
-port = 3306
+host = localhost
+username = ojs
+password = ojs
+name = ojs
 
 ; Set the non-standard port and/or socket, if used
-port = 3306
+; port = 3306
 ; unix_socket = /var/run/mysqld/mysqld.sock
 
 ; Database collation
 ; collation = utf8_general_ci
 
 ; Enable database debug output (very verbose!)
-debug = On
+debug = Off
 
 
 ;;;;;;;;;;;;;;;;;;
@@ -205,7 +204,7 @@ web_cache_hours = 1
 [i18n]
 
 ; Default locale
-locale = es
+locale = en
 
 ; Database connection character set
 connection_charset = utf8
@@ -220,7 +219,7 @@ connection_charset = utf8
 ; Complete path to directory to store uploaded files
 ; (This directory should not be directly web-accessible)
 ; Windows users should use forward slashes
-files_dir = /var/www/files
+files_dir = files
 
 ; Path to the directory to store public uploaded files
 ; (This directory should be web-accessible and the specified path
@@ -405,7 +404,7 @@ oai = On
 
 ; OAI Repository identifier. This setting forms part of OAI-PMH record IDs.
 ; Changing this setting may affect existing clients and is not recommended.
-repository_id = ojs
+repository_id = ojs.pkp.sfu.ca
 
 ; Maximum number of records per request to serve via OAI
 oai_max_records = 100
@@ -491,16 +490,16 @@ xslt_command = ""
 ; Display a stack trace when a fatal error occurs.
 ; Note that this may expose private information and should be disabled
 ; for any production system.
-show_stacktrace = On
+show_stacktrace = Off
 
 ; Display an error message when something goes wrong.
-display_errors = On
+display_errors = Off
 
 ; Display deprecation warnings
-deprecation_warnings = On
+deprecation_warnings = Off
 
 ; Log web service request information for debugging
-log_web_service_info = On
+log_web_service_info = Off
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;

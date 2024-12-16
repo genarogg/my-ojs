@@ -6,10 +6,7 @@ services:
     volumes:
       - .:/var/www/html
       - ./ojs-files:/var/www/html/files
-      - ./ojs-files:/var/www/files  
-    depends_on:
-      mariadb:
-        condition: service_healthy
+      - ./ojs-files:/var/www/files   
     environment:
       DB_HOST: mariadb_container
       DB_USER: dir_informatica
