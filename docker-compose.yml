@@ -1,8 +1,8 @@
 services:
-  ojs:
+  saber_unerg:
     build: .
     ports:
-      - "3000:80"
+      - "6100:80"
     volumes:
       - .:/var/www/html
       - ./ojs-files:/var/www/html/files
