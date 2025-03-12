@@ -2,7 +2,7 @@ services:
   saber_unerg_prod:
     build: .
     ports:
-      - "6100:80"
+      - "5252:80"
     volumes:
       - .:/var/www/html
       - ./ojs-files:/var/www/html/files
