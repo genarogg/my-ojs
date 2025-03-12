@@ -10,6 +10,7 @@ RUN apt-get update && apt-get install -y \
     zip \
     unzip \
     libicu-dev \
+    nginx \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install gd \
     && docker-php-ext-install mysqli pdo pdo_mysql zip intl
@@ -19,6 +20,10 @@ RUN a2enmod rewrite
 
 # Copia los archivos del proyecto al contenedor
 COPY . /var/www/html
+
+# Copia los archivos de configuración de Nginx
+COPY nginx.conf /etc/nginx/nginx.conf
+COPY default.conf /etc/nginx/conf.d/default.conf
 
 # Crea los directorios necesarios y establece los permisos adecuados
 RUN mkdir -p /var/www/html/files \
@@ -38,5 +43,8 @@ RUN mkdir -p /var/www/html/files \
     && chmod -R 777 /var/www/files \
     && chmod -R 777 /var/log/apache2
 
-# Exponer el puerto 80
-EXPOSE 80
+# Exponer los puertos 80 y 443
+EXPOSE 80 443
+
+# Comando para iniciar Nginx y Apache
+CMD service apache2 start && nginx -g 'daemon off;'
